@@ -1,8 +1,8 @@
 # name of your application
-APPLICATION = Task01
+APPLICATION = MiniProject
 
 # If no BOARD is found in the environment, use this default:
-BOARD ?= native
+BOARD ?= iotlab-m3
 
 # This has to be the absolute path to the RIOT base directory:
 RIOTBASE ?= $(CURDIR)/../RIOT
@@ -19,5 +19,13 @@ QUIET ?= 1
 USEMODULE += shell
 USEMODULE += shell_commands
 USEMODULE += ps
+USEMODULE += xtimer
+USEMODULE += lps331ap
+USEMODULE += isl29020
+USEMODULE += lsm303dlhc
+USEMODULE += ztimer_msec
+
+
+
 
 include $(RIOTBASE)/Makefile.include

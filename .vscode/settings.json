@@ -1,0 +1,10 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "shell.h": "c",
+        "lps331apsensor.h": "c",
+        "isl29020sensor.h": "c",
+        "xtimer.h": "c",
+        "sock_types.h": "c"
+    }
+}

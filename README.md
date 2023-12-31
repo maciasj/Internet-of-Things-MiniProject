@@ -1,83 +1,12 @@
-# Tutorials for RIOT
+# MiniProject1 for IoT course
+This Mini Project1, designed for the IoT course, centers around the utilization of an m3 board. The project facilitates the reading of temperature/pressure via "lps start/stop" commands and acceleration/magnetic force through "lsp start/stop" commands on the m3 node. Temperature and pressure data are collected every 30 seconds, while accelerometer and magnetometer data are gathered every 15 seconds. Subsequently, this information is transmitted to an AWS cloud server, specifically configured to receive these calls.
 
-## Preparations
+To get started, set up the RIOT environment following the instructions outlined at https://github.com/RIOT-OS/RIOT. Additionally, establish the border router by referring to https://www.iot-lab.info/learn/tutorials/riot/riot-public-ipv6-m3/.
 
-For links go to [https://github.com/RIOT-OS/Tutorials](https://github.com/RIOT-OS/Tutorials)
+Conduct an experiment in FitIoT Lab and submit the .elf file into one node. Locate the node's firmware in MiniProject/task01 by executing the command "make."
 
-**Quick Setup using a Virtual Machine (recommended for this Tutorial)**
+In the video demonstration provided here, the operational AWS CoAP server is showcased. Unfortunately, due to challenges in obtaining the IPv6 address, the nodes are not connected to the cloud service. Complications also arose in configuring the CoAP client, resulting in compilation errors with local files from other RIOT folders. However, a successful GET call from the laptop is demonstrated.
 
-* Install and set up [git](https://help.github.com/articles/set-up-git/)
-* Install latest [VirtualBox](https://www.virtualbox.org/wiki/Downloads) & [VirtualBox Extension Pack](https://www.virtualbox.org/wiki/Downloads) for **your system**
-* Install [Vagrant](https://www.vagrantup.com/downloads.html)
-* Linux, OSX:
-    ```Shell
-    git clone --recursive https://github.com/RIOT-OS/Tutorials
-    cd Tutorials
-    ```
-* Windows:
-    * set
-      ```Shell
-      git config --global core.autocrlf input
-      ```
-      before cloning
-    * clone the `Tutorials` and the `RIOT` submodule as follows:
-    ```Shell
-    git clone https://github.com/RIOT-OS/Tutorials
-    cd Tutorials
-    git submodule update --init --recursive
-    ```
-* In case a virtual machine is disseminated locally, adapt the path for the vagrant box `vagrant box add RIOT/ubuntu1804 <path to box>`
-* Run `vagrant up` and `vagrant ssh` afterwards. See the [Vagrant RIOT Setup](https://github.com/RIOT-OS/RIOT/blob/master/dist/tools/vagrant/README.md) for a more general explanation.
+A note to the professor expresses regret for not achieving all project goals, citing challenges faced as a degree exchange student learning from scratch. 
+Despite these obstacles, valuable learning experiences were gained, acknowledging difficulties in collaboration with an unresponsive partner.
 
-**Regular Setup without using a VM (recommended for RIOT developement)**
-
-* Install and set up [git](https://help.github.com/articles/set-up-git/)
-* Install the build-essential packet (make, gcc etc.). This varies based on the operating system in use.
-* Install [Native dependencies](https://github.com/RIOT-OS/RIOT/wiki/Family:-native#dependencies)
-* Install [OpenOCD](https://github.com/RIOT-OS/RIOT/wiki/OpenOCD)
-* Install [GCC Arm Embedded Toolchain](https://launchpad.net/gcc-arm-embedded)
-* On OS X: install [Tuntap for OS X](http://tuntaposx.sourceforge.net/)
-* [additional tweaks](https://github.com/RIOT-OS/RIOT/wiki/Board:-Samr21-xpro) necessary to work with the targeted hardware (ATSAMR21)
-* Install `netcat` with IPv6 support (if necessary)
-
-  ```bash
-  sudo apt-get install netcat-openbsd
-  ```
-
-* `git clone --recursive https://github.com/RIOT-OS/Tutorials`
-* Go to the Tutorials directory: `cd Tutorials`
-
-## Tasks
-* [Task 1: Starting the RIOT](task-01/)
-* [Task 2: Custom shell handlers](task-02/)
-* [Task 3: Multithreading](task-03/)
-* [Task 4: Timers](task-04/)
-* [Task 5: Using network devices](task-05/)
-* [Task 6: Sending and receiving UDP packets](task-06/)
-* [Task 7: The GNRC network stack](task-07/)
-* [Task 8: CCN-Lite on RIOT](task-08/)
-* [Task 9: RIOT and RPL](task-09/)
-
-## Troubleshooting
-
-### If you get the following error after running `vagrant up`
-
-> The guest machine entered an invalid state while waiting for it to boot. Valid states are 'starting, running'. The machine is in the 'poweroff' state.
-
-Make sure you have the [Extension Pack](https://www.virtualbox.org/wiki/Downloads) installed.
-
-### If you cannot flash a connected board (`/dev/ttyXXXX` does not exist)
-
-Make sure your user is a member of the usergroup `vboxusers`. On Linux you can add the current user with
-
-`usermod -a -G vboxusers $USER`.
-
-You can check the groups of your user with
-
-`groups`.
-
-Note that you need to log out once to reload a Linux user's group assignments
-
-## License
-This work and all its related code and documents are licensed under a
-[Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)

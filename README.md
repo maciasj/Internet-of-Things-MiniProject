@@ -15,10 +15,6 @@ lps stop
 lsm stop
 ````
 
-In the video demonstration provided below, the operational AWS CoAP server is showcased. Unfortunately, due to challenges in obtaining the IPv6 address, the nodes are not connected to the cloud service. Complications also arose in configuring the CoAP client, resulting in compilation errors with local files from other RIOT folders. However, a successful GET call from the laptop is demonstrated.
 
 https://drive.google.com/file/d/1CCrxBQtsxZgoeXTnDD2AEPtg2aGmS_1H/view?usp=sharing
-
-A note to the professor expresses regret for not achieving all project goals, citing challenges faced as a degree exchange student learning from scratch. 
-Despite these obstacles, valuable learning experiences were gained, acknowledging difficulties in collaboration with an unresponsive partner.
 
